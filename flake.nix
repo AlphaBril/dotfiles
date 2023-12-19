@@ -9,7 +9,7 @@
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
-    nixosConfigurations.wbg-pc = nixpkgs.lib.nixosSystem rec {
+    nixosConfigurations.alphabril-pc = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       modules = [
         { 

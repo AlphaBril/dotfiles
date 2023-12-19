@@ -13,7 +13,8 @@
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     # here I list strings, which are names of packages allowed non-free
-    "veracrypt"
+    "spotify"
+    "slack"
   ];
 
   # This value determines the NixOS release from which the default
