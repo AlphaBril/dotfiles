@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  users.mutableUsers = false;
+  users.mutableUsers = true;
   users.users.alphabril = {
     isNormalUser = true;
     description = "alphabril";
