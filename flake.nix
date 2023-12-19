@@ -36,8 +36,6 @@
           home-manager.useUserPackages = true;
           home-manager.users.alphabril.imports = [
             ./nix-config/home/home.nix
-            ./nix-config/home/ocr.nix
-            ./nix-config/home/org.nix
           ];
         }
       ];
