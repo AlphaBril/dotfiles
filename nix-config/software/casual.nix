@@ -1,4 +1,4 @@
-{ pkgs, sw, ... }: {
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     spotify
     slack

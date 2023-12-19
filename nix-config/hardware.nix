@@ -5,47 +5,16 @@ rec {
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.loader.grub = {
-    enable = true;
-    efiSupport = true;
-    useOSProber = true;
-    device = "nodev";
-    efiInstallAsRemovable = true;
+  # Use the systemd-boot EFI boot loader.
+  boot.loader = {
+    timeout = 1;
+    systemd-boot = {
+      enable = true;
+      configurationLimit = 10;
+    };
   };
-
-  boot.loader.efi.canTouchEfiVariables = false;
-
-  boot.supportedFilesystems = [ "ntfs" ];
-
-  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" "usb_storage" "sd_mod" "sdhci_pci" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ 
-  ];
-  boot.kernelParams = [ "i915.force_probe=46a8" ];
-  # boots with kernel panic (blinking caps lock), hangs there
-  # boot.kernelPackages = pkgs.linuxPackages_latest-libre;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  # boot.kernelPackages = pkgs.linuxPackages_6_4;
-
-  # boot.kernelPackages =
-  # let
-  #   my-kernel = (pkgs.linux_6_1.override {
-  #     argsOverride = rec {
-  #       src = pkgs.fetchzip {
-  #         url = "https://github.com/torvalds/linux/archive/refs/tags/v6.2.zip";
-  #         sha256 = "sha256-woUP0KZEnwYEzvQEc1OBoCTjkLl8JjYAT4CxFVrfIjU=";
-  #       };
-  #       version = "6.2";
-  #       modDirVersion = "6.2";
-  #       };
-  #   });
-  # in
-  # #  pkgs.linuxPackagesFor (
-  # #   pkgs.linux-libre.override { linux = my-kernel; });
-  # pkgs.linuxPackagesFor my-kernel;
-
-  boot.initrd.luks.devices.root.device = "/dev/disk/by-uuid/6157f167-254e-43d2-934a-9af12e015706";
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.plymouth.enable = true;
 
   fileSystems = 
     let 
