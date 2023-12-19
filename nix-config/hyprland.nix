@@ -1,4 +1,4 @@
-{ nixpkgs, hyprland-input, ataraxiasjel, ... }: system:
+{ nixpkgs, hyprland-input, ... }: system:
 {
   programs.hyprland.package = hyprland-input.packages.${system}.hyprland;
   programs.hyprland.enable = true;
@@ -7,7 +7,7 @@
     waybar
     rofi # wofi works like shit
     (writeScriptBin "rofi-run" ''
-curr=$(/home/goose/.config/global_scripts/get-current-theme.sh)
+curr=$(/home/alphabril/.config/global_scripts/get-current-theme.sh)
 if [ "$curr" = "prefer-light" ]; then
     theme_arg="-theme Arc"
 else
@@ -24,7 +24,6 @@ rofi -dpi 192 -modi drun,run -show drun -show-icons $theme_arg -theme-str "eleme
     grim
     slurp
     waydroid
-    ataraxiasjel.packages.${system}.waydroid-script
     swaylock
   ] ++ (let
       wp = (import ./wallpapers.nix nixpkgs.legacyPackages.${system});

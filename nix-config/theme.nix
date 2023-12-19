@@ -2,12 +2,12 @@
 
 rec {
   dark-wallpaper = pkgs.fetchurl {
-    url = "https://fedoraproject.org/w/uploads/f/fc/F37-01-night.jpg";
+    url = "https://github.com/MathisP75/summer-day-and-night/blob/main/wallpapers/summer-night.png";
     sha256 = "sha256-eiMZ3xWagyUrI9iTP015cZh4X5x9gz3XXi44IeaOrEM=";
   };
 
   light-wallpaper = pkgs.fetchurl {
-    url = "https://fedoraproject.org/w/uploads/0/02/F37-01-day.jpg";
+    url = "https://github.com/MathisP75/summer-day-and-night/blob/main/wallpapers/summer-day.png";
     sha256 = "sha256-l65ZSBoll80sSzje8qOkQPQtKnNqKQnMCwJGSRhrkvc=";
   };
 
@@ -27,9 +27,9 @@ rec {
     exec = ''${pkgs.writeScript "theme" ''
       curr=$(~/.config/global_scripts/get-current-theme.sh)
       if [ "$curr" = "prefer-light" ]; then
-        echo 'prefer-dark' > /home/goose/.config/global_scripts/currtheme
+        echo 'prefer-dark' > /home/alphabril/.config/global_scripts/currtheme
       else
-        echo 'prefer-light' > /home/goose/.config/global_scripts/currtheme
+        echo 'prefer-light' > /home/alphabril/.config/global_scripts/currtheme
       fi
       ${apply-theme-script}
     ''}'';

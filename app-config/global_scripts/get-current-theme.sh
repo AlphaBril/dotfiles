@@ -1,2 +1,2 @@
 # gsettings get org.gnome.desktop.interface color-scheme
-cat /home/goose/.config/global_scripts/currtheme
+cat /home/alphabril/.config/global_scripts/currtheme

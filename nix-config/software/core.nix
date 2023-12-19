@@ -1,4 +1,4 @@
-{ pkgs, sw, ... }: {
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     libadwaita
     arc-theme
@@ -35,7 +35,5 @@
         gsettings set $gnome_schema gtk-theme 'Dracula'
         '';
     })
-    sw.nvim.default
-    sw.nil.default
   ];
 }

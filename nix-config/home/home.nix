@@ -2,8 +2,8 @@ inputs@{ config, lib, pkgs, ... }:
 rec {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "goose";
-  home.homeDirectory = "/home/goose";
+  home.username = "alphabril";
+  home.homeDirectory = "/home/alphabril";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -21,46 +21,47 @@ rec {
     git = {
       enable = true;
       lfs.enable = true;
-      userName = "WhiteBlackGoose";
-      userEmail = "wbg@angouri.org";
-      signing = {
-        key = "640BEDDE9734310ABFA3B25752EDAE6A3995AFAB";
-      };
-      extraConfig = {
-        core.eol = "lf";
-        status.submodulesummary = 1;
-        push.recurseSubmodules = "check";
-      };
-      aliases = {
-        "unstage" = "reset HEAD --";
-        "rbi" = "rebase --interactive";
-        "sa" = "status -s --ignored=traditional";
-        "ss" = "status -s";
-        "a" = "add";
-        "c" = "commit -m";
-      };
+      userName = "AlphaBril";
+      userEmail = "florian.marie.doucet@gmail.com";
+      # signing = {
+      #   key = "640BEDDE9734310ABFA3B25752EDAE6A3995AFAB";
+      # };
+      # extraConfig = {
+      #   core.eol = "lf";
+      #   status.submodulesummary = 1;
+      #   push.recurseSubmodules = "check";
+      # };
+      # aliases = {
+      #   "unstage" = "reset HEAD --";
+      #   "rbi" = "rebase --interactive";
+      #   "sa" = "status -s --ignored=traditional";
+      #   "ss" = "status -s";
+      #   "a" = "add";
+      #   "c" = "commit -m";
+      # };
     };
     fish = {
       enable = true;
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
-        alias ls="lsd"
-        alias ll="lsd -la"
+        '';
+        # alias ls="lsd"
+        # alias ll="lsd -la"
 
-        alias cdf='cd $(find . -type d 2>/dev/null | fzf)'
-        alias cda='cd / && cdf'
-        alias cdh='cd ~ && cdf'
-        alias cde='cd /etc/nixos'
+        # alias cdf='cd $(find . -type d 2>/dev/null | fzf)'
+        # alias cda='cd / && cdf'
+        # alias cdh='cd ~ && cdf'
+        # alias cde='cd /etc/nixos'
 
-        alias xda='cd / && fzf-xdg'
-        alias xdh='cd ~ && fzf-xdg'
-        alias xdf='fzf-xdg'
-        starship init fish | source
+        # alias xda='cd / && fzf-xdg'
+        # alias xdh='cd ~ && fzf-xdg'
+        # alias xdf='fzf-xdg'
+        # starship init fish | source
 
-        set -a PATH /home/goose/me/scripts
-        set -a PATH /home/goose/.config/global_scripts
-        fish_ssh_agent
-      '';
+        # set -a PATH /home/alphabril/me/scripts
+        # set -a PATH /home/alphabril/.config/global_scripts
+        # fish_ssh_agent
+      # '';
     };
   };
 

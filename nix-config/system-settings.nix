@@ -5,7 +5,7 @@
 
   networking.networkmanager.enable = true;
 
-  time.timeZone = "Europe/Berlin";
+  time.timeZone = "Europe/Paris";
   i18n.defaultLocale = "en_GB.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -34,7 +34,6 @@
   # services.fprintd.tod.driver = pkgs.libfprint-2-tod1-vfs0090;
 
   hardware.opengl.enable = true;
-  hardware.opengl.extraPackages = [ pkgs.mesa.drivers ];
 
   # bluetooth
   hardware.bluetooth.enable = true;
@@ -47,7 +46,6 @@
   # services.pipewire.enable = false;
   # hardware.pulseaudio.enable = true;
   # hardware.pulseaudio.support32Bit = true;
-  # users.extraUsers.goose.extraGroups = [ "audio" ];
   # nixpkgs.config.pulseaudio = true;
   # hardware.pulseaudio.extraConfig = "load-module module-combine-sink";
 
@@ -122,8 +120,6 @@
   virtualisation.waydroid.enable = true;
 
   # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/networking/syncthing.nix
-  networking.firewall.allowedTCPPorts = [ 8384 22000 4321 8000 8080 1194 42000 42001 8873 ];
-  networking.firewall.allowedUDPPorts = [ 22000 21027 1194 51820 ];
   # environment.systemPackages = [
   #   pkgs.wireguard-tools
   # ];
