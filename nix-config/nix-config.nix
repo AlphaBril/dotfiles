@@ -15,6 +15,8 @@
     # here I list strings, which are names of packages allowed non-free
     "spotify"
     "slack"
+    "discord"
+    "datagrip"
   ];
 
   # This value determines the NixOS release from which the default

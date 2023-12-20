@@ -3,12 +3,12 @@
 rec {
   dark-wallpaper = pkgs.fetchurl {
     url = "https://github.com/MathisP75/summer-day-and-night/blob/main/wallpapers/summer-night.png";
-    sha256 = "sha256-eiMZ3xWagyUrI9iTP015cZh4X5x9gz3XXi44IeaOrEM=";
+    sha256 = "sha256-ctB7W4sYVpdmAqOauLxeU3pllRRllEyCd+ng/gWkx6c=";
   };
 
   light-wallpaper = pkgs.fetchurl {
     url = "https://github.com/MathisP75/summer-day-and-night/blob/main/wallpapers/summer-day.png";
-    sha256 = "sha256-l65ZSBoll80sSzje8qOkQPQtKnNqKQnMCwJGSRhrkvc=";
+    sha256 = "sha256-DjaQInEgGWT9fmmjJyhhpm9shypfXwh+nzTN4CHQP0M=";
   };
 
   apply-theme-script = pkgs.writeScript "apply-theme" ''
